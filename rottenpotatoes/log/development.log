@@ -493,3 +493,56 @@ Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-23 13:57:16
 
 
 Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-23 13:57:16 -0700
+
+
+Started GET "/movies" for ::1 at 2015-09-25 16:13:32 -0500
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 23ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for ::1 at 2015-09-25 16:13:34 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (91.1ms)
+Completed 200 OK in 816ms (Views: 691.7ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-09-25 16:13:35 -0500
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-09-25 16:13:35 -0500
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-09-25 16:13:35 -0500
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-09-25 16:13:35 -0500
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for ::1 at 2015-09-25 16:13:41 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for ::1 at 2015-09-25 16:13:41 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 71ms (Views: 69.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-09-25 16:13:41 -0500
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-09-25 16:13:41 -0500
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-09-25 16:13:41 -0500
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-09-25 16:13:41 -0500

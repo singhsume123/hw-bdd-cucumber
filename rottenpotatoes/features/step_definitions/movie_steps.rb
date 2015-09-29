@@ -4,8 +4,10 @@ Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
+    @movie = Movie.new(:title => movie[:title], :rating => movie[:rating], :release_date => movie[:release_date])
+    @movie.save()
+
   end
-  fail "Unimplemented"
 end
 
 # Make sure that one string (regexp) occurs before or after another one
@@ -14,7 +16,12 @@ end
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
-  fail "Unimplemented"
+  #debugger
+  if page.body =~ /#{e1}(.*)#{e2}/m
+
+  else
+      fail "Movie #{e1} should be before #{e2}"  
+   end   
 end
 
 # Make it easier to express checking or unchecking several boxes at once
