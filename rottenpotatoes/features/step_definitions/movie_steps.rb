@@ -11,10 +11,11 @@ Given /the following movies exist/ do |movies_table|
 end
 
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
-   if page.body =~ /#{e1}(.*)#{e2}/m
-   else 
-     raise "Movie #{e1} should be before #{e2}"  
-   end   
+  page.assert_text /#{e1}(.*)#{e2}/m
+  # if page.body =~ /#{e1}(.*)#{e2}/m
+  # else
+   #  raise "Movie #{e1} should be before #{e2}"
+  # end
 end
 
 # Make it easier to express checking or unchecking several boxes at once
